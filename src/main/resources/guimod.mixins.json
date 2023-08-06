@@ -1,0 +1,21 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "useless.guimod.mixins",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "InventoryMixin",
+        "InventoryCreativeMixin",
+        "CraftingMixin",
+        "FurnanceMixin",
+        "ChestMixin",
+        "DispenserMixin",
+        "TrommelMixin",
+        "GuidebookMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+  }
+}
