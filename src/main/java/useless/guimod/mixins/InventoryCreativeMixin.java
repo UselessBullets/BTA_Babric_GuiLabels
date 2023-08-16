@@ -11,6 +11,7 @@ import org.lwjgl.input.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import useless.config.ModMenuConfigManager;
 import useless.guimod.GUIMod;
 
 @Mixin(value = GuiInventoryCreative.class, remap = false)
@@ -39,7 +40,7 @@ public class InventoryCreativeMixin extends GuiInventory implements GuiTextField
     @Overwrite
     public void drawGuiContainerForegroundLayer() {
         super.drawGuiContainerForegroundLayer();
-        drawStringCenteredNoShadow(this.fontRenderer, this.pageString, 228, 146, GUIMod.GuiTextColor);
+        drawStringCenteredNoShadow(this.fontRenderer, this.pageString, 228, 146, ModMenuConfigManager.getConfig().getLabelColor());
     }
 
     /**

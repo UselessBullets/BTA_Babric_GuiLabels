@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "guimod",
-  "version": "1.1.0",
+  "version": "1.2.0",
 
-  "name": "White GUI Labels",
-  "description": "Turns GUI Labels white.",
+  "name": "Custom Colored GUI Labels",
+  "description": "Changes GUI Labels color.",
   "authors": [
     "Useless"
   ],
+  "icon": "icon.png",
   "contact": {
-    "homepage": "https://discord.com/channels/866992171319558144/1136924012266663998",
+    "homepage": "https://github.com/UselessBullets?tab=repositories",
     "sources": ""
   },
 
