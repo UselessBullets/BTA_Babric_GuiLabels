@@ -1,34 +1,16 @@
 package useless.guimod.mixins;
 
-import net.minecraft.client.gui.GuiContainer;
 import net.minecraft.client.gui.GuiInventory;
-import net.minecraft.core.player.inventory.Container;
+import net.minecraft.client.render.FontRenderer;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-
-import useless.config.ModMenuConfigManager;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import useless.guimod.GUIMod;
 
 @Mixin(value = GuiInventory.class, remap = false)
-public class InventoryMixin extends GuiContainer {
-
-    // Required for mixin to function
-    public InventoryMixin(Container container) {
-        super(container);
+public class InventoryMixin {
+    @Redirect(method = "drawGuiContainerForegroundLayer()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/FontRenderer;drawString(Ljava/lang/String;III)V"))
+    private void changeColor(FontRenderer instance, String text, int x, int y, int color) {
+        instance.drawString(text,x,y, GUIMod.labelColor);
     }
-
-    @Shadow
-    protected void drawGuiContainerBackgroundLayer(float f) {}
-
-    // Allows for color change on gui text
-    /**
-     * @author Useless
-     * @reason Modify hardcoded strings and their colors
-     */
-    @Overwrite
-    public void drawGuiContainerForegroundLayer() {
-        this.fontRenderer.drawString("Crafting", 86, 16, ModMenuConfigManager.getConfig().getLabelColor());
-    }
-
 }
