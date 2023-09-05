@@ -1,10 +1,10 @@
 package useless.guimod.mixins;
 
-import jdk.internal.org.objectweb.asm.Opcodes;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.render.FontRenderer;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.ContainerPlayerCreative;
+import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
